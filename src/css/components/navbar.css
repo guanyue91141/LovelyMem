@@ -220,6 +220,8 @@
 .vertical-navbar .nav-item[data-nav="registry-viewer"] { color: #10b981; } /* 注册表 - 绿 */
 .vertical-navbar .nav-item[data-nav="event-viewer"] { color: #3b82f6; }    /* 事件查看器 - 蓝 */
 .vertical-navbar .nav-item[data-nav="string-search"] { color: #f97316; }   /* 字符串搜索 - 橙 */
+.vertical-navbar .nav-item[data-nav="logs"] { color: #0ea5e9; }            /* 日志 - 天蓝 */
+.vertical-navbar .nav-item[data-nav="unload-image"] { color: #64748b; }    /* 卸载镜像 - 灰 */
 .vertical-navbar .nav-item[data-nav="more-tools"] { color: #64748b; }      /* 更多工具 - 石板灰 */
 .vertical-navbar .nav-item[data-nav="settings"] { color: #94a3b8; }        /* 设置 - 灰 */
 

@@ -11,6 +11,8 @@ const NAV_ITEM_LABELS: Record<string, string> = {
     'registry-viewer': '注册表',
     'event-viewer': '事件查看器',
     'string-search': '字符串搜索',
+    logs: '日志',
+    'unload-image': '卸载镜像/返回加载界面',
     'process-galaxy': '星图',
     'more-tools': '更多工具',
     settings: '设置',
@@ -32,6 +34,7 @@ const DEFAULT_NAVBAR_ICONS: Record<string, string> = {
     super_timeline: 'super_timeline',
     symbol_manager: '🧩',
     logs: '📋',
+    'unload-image': '⏏️',
     settings: '⚙️',
 };
 
@@ -125,6 +128,7 @@ export class NavBarRenderer {
           ${navItem('registry-viewer', 'registry', '注册表')}
           ${navItem('event-viewer', 'event_viewer', '事件查看器')}
           ${navItem('string-search', 'string_search', '字符串搜索')}
+          ${navItem('logs', 'logs', '日志')}
           <div class="nav-item" title="更多工具" data-nav="more-tools">
             <span class="nav-icon">${this.getMoreToolsSvg()}</span>
             <span class="nav-label">更多工具</span>
@@ -136,10 +140,6 @@ export class NavBarRenderer {
               <div class="secondary-menu-item" data-action="nav-shortcut" data-nav-target="report-editor">
                 <span class="menu-icon">${this.getNavbarIcon('report_editor', 16)}</span>
                 <span class="menu-text">报告编辑器</span>
-              </div>
-              <div class="secondary-menu-item" data-action="nav-shortcut" data-nav-target="logs">
-                <span class="menu-icon">${this.getNavbarIcon('logs', 16)}</span>
-                <span class="menu-text">日志</span>
               </div>
               <div class="menu-separator"></div>
               <div class="secondary-menu-item" data-action="nav-shortcut" data-nav-target="super-timeline">
@@ -161,6 +161,7 @@ export class NavBarRenderer {
               <polyline class="nav-toggle-arrow" points="9 18 15 12 9 6"/>
             </svg>
           </div>
+          ${navItem('unload-image', 'unload-image', '卸载镜像/返回加载界面')}
           ${navItem('settings', 'settings', '设置')}
         </div>
       </div>

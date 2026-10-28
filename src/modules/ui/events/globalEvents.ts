@@ -432,6 +432,13 @@ export class GlobalEvents {
         return;
       }
 
+      // 从一级导航直接卸载当前镜像并返回加载界面
+      if (navType === 'unload-image') {
+        this.handleSettingsAction('unmount-image');
+        e.stopPropagation();
+        return;
+      }
+
       // 处理文件按钮
       if (navType === 'files') {
         this.handleFilesNavClick(navItem as HTMLElement);
@@ -819,13 +826,6 @@ export class GlobalEvents {
     const currentTheme = this.stateManager.getState().theme || 'light';
 
     menu.innerHTML = `
-      <div class="menu-item" data-action="unmount-image">
-        <span class="menu-icon" style="display: flex; align-items: center; justify-content: center;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="M7 9l5-5 5 5"/><path d="M12 4v12"/></svg>
-        </span>
-        <span class="menu-text">卸载镜像/返回加载界面</span>
-      </div>
-      <div class="menu-separator"></div>
       <div class="menu-item menu-item-theme-switch">
         <span class="menu-icon" style="display: flex; align-items: center; justify-content: center;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>

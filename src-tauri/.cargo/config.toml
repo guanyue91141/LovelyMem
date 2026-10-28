@@ -1,6 +1,10 @@
-# 使用 LLD 快速链接器，大幅加速链接阶段
+# Windows 桌面版默认使用 MSVC，避免 Rustup 默认 GNU 工具链与 MSVC 链接参数不兼容。
+[build]
+target = "x86_64-pc-windows-msvc"
+
+# 使用 Visual Studio 自带的 MSVC linker（本机未安装 lld-link）。
 [target.x86_64-pc-windows-msvc]
-linker = "lld-link"
+linker = "link.exe"
 
 [target.aarch64-pc-windows-msvc]
-linker = "lld-link"
+linker = "link.exe"
